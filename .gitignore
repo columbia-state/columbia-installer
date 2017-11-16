@@ -1,0 +1,13 @@
+
+files/
+support/
+image/
+include/
+output/
+original/
+registry/
+support_extra/
+*.ico
+*.bmp
+*.psd
+*.rtf
