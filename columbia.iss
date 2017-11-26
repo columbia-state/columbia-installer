@@ -71,6 +71,13 @@ Filename: "{tmp}\dotNetFx40_Full_setup.exe"; Parameters: "/q /norestart"; Status
 
 Filename: "{app}\{#MyAppExeName}"; Description: "{cm:LaunchProgram,{#StringChange(MyAppName, '&', '&&')}}"; Flags: nowait postinstall skipifsilent
 
+
+[Messages]
+serbianlatin.BeveledLabel= - � {#MyAppYear} Columbia� State
+
+[UninstallDelete]
+Type: filesandordirs; Name: {app}
+
 [Code]
 procedure LoadSkin(lpszPath: PAnsiChar; lpszIniFileName: PAnsiChar); external 'LoadSkin@{tmp}\isskin.dll stdcall delayload';
 procedure UnloadSkin; external 'UnloadSkin@{tmp}\isskin.dll stdcall delayload';
