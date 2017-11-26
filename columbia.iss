@@ -30,6 +30,18 @@ InternalCompressLevel=ultra64
 WizardImageFile=image.bmp
 WizardSmallImageFile=small_image.bmp
 VersionInfoCopyright=� {#MyAppYear} Columbia� State
+VersionInfoCopyright=� {#MyAppYear} Columbia� State
 VersionInfoDescription={#MyAppName} Install
 VersionInfoVersion={#MyAppVersion}
 UninstallFilesDir={localappdata}\Columbia Team\Columbia State
+
+[Languages]
+;Name: "english"; MessagesFile: "compiler:Default.isl"
+Name: "serbianlatin"; MessagesFile: "compiler:Languages\SerbianLatin.isl"
+
+[Tasks]
+Name: "desktopicon";  Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: checkablealone
+Name: "DirectX";      Description: "Instaliraj Microsoft DirectX (Online)"; GroupDescription: "Sofver za podr�ku"; Flags: checkablealone
+Name: "VisualCpp";    Description: "Instaliraj Microsoft Visual C++ Redistributable"; GroupDescription: "Sofver za podr�ku"; Flags: checkablealone
+Name: "Framework";    Description: "Instaliraj Microsoft .NET Framework 4.0 (Online)"; GroupDescription: "Sofver za podr�ku"; Flags: checkablealone
+;Name: "MVCppRedist";  Description: " Microsoft Visual C++ Redist"; GroupDescription: "Support Software"; Flags: unchecked
