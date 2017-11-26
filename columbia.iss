@@ -45,6 +45,17 @@ Name: "DirectX";      Description: "Instaliraj Microsoft DirectX (Online)"; Grou
 Name: "VisualCpp";    Description: "Instaliraj Microsoft Visual C++ Redistributable"; GroupDescription: "Sofver za podr�ku"; Flags: checkablealone
 Name: "Framework";    Description: "Instaliraj Microsoft .NET Framework 4.0 (Online)"; GroupDescription: "Sofver za podr�ku"; Flags: checkablealone
 ;Name: "MVCppRedist";  Description: " Microsoft Visual C++ Redist"; GroupDescription: "Support Software"; Flags: unchecked
+[Files]
+Source: "files\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "include\*"; DestDir: "{tmp}"; Flags: ignoreversion dontcopy
+Source: "support\*"; DestDir: "{tmp}"; Flags: ignoreversion dontcopy
+
+[Icons]
+Name: "{group}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"
+Name: "{group}\{cm:ProgramOnTheWeb,{#MyAppName}}"; Filename: "{#MyAppURL}"
+Name: "{group}\{cm:UninstallProgram,{#MyAppName}}"; Filename: "{uninstallexe}"
+Name: "{commondesktop}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"; Tasks: desktopicon
+
 [Run]
 Filename: "{tmp}\dxwebsetup.exe"; Parameters: "/q"; StatusMsg: "Install Microsoft DirectX online..."; Tasks: DirectX; Flags: waituntilterminated
 Filename: "{tmp}\vcredist_2005 _SP1_x86.exe"; Parameters: "/q"; StatusMsg: "Install Microsoft Visual C++ Runtime..."; Tasks: VisualCpp; Flags: waituntilterminated
