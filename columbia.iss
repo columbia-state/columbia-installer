@@ -45,3 +45,18 @@ Name: "DirectX";      Description: "Instaliraj Microsoft DirectX (Online)"; Grou
 Name: "VisualCpp";    Description: "Instaliraj Microsoft Visual C++ Redistributable"; GroupDescription: "Sofver za podr�ku"; Flags: checkablealone
 Name: "Framework";    Description: "Instaliraj Microsoft .NET Framework 4.0 (Online)"; GroupDescription: "Sofver za podr�ku"; Flags: checkablealone
 ;Name: "MVCppRedist";  Description: " Microsoft Visual C++ Redist"; GroupDescription: "Support Software"; Flags: unchecked
+[Run]
+Filename: "{tmp}\dxwebsetup.exe"; Parameters: "/q"; StatusMsg: "Install Microsoft DirectX online..."; Tasks: DirectX; Flags: waituntilterminated
+Filename: "{tmp}\vcredist_2005 _SP1_x86.exe"; Parameters: "/q"; StatusMsg: "Install Microsoft Visual C++ Runtime..."; Tasks: VisualCpp; Flags: waituntilterminated
+Filename: "{tmp}\vcredist_2005_x86.exe"; Parameters: "/q"; StatusMsg: "Install Microsoft Visual C++ Runtime..."; Tasks: VisualCpp; Flags: waituntilterminated
+Filename: "{tmp}\vcredist_2008_SP1_x86.exe"; Parameters: "/q"; StatusMsg: "Install Microsoft Visual C++ Runtime..."; Tasks: VisualCpp; Flags: waituntilterminated
+Filename: "{tmp}\vcredist_2008_x86.exe"; Parameters: "/q"; StatusMsg: "Install Microsoft Visual C++ Runtime..."; Tasks: VisualCpp; Flags: waituntilterminated
+Filename: "{tmp}\vcredist_2010_SP1_x86.exe"; Parameters: "/q /norestart"; StatusMsg: "Install Microsoft Visual C++ Runtime..."; Tasks: VisualCpp; Flags: waituntilterminated
+Filename: "{tmp}\vcredist_2010_x86.exe"; Parameters: "/q /norestart"; StatusMsg: "Install Microsoft Visual C++ Runtime..."; Tasks: VisualCpp; Flags: waituntilterminated
+;Filename: "{tmp}\vcredist_2012_Update4_x86.exe"; Parameters: "/q /norestart"; StatusMsg: "Install Microsoft Visual C++ Runtime..."; Tasks: VisualCpp; Flags: waituntilterminated
+;Filename: "{tmp}\vcredist_2013_x86.exe"; Parameters: "/install /quiet /norestart"; StatusMsg: "Install Microsoft Visual C++ Runtime..."; Tasks: VisualCpp; Flags: waituntilterminated
+;Filename: "{tmp}\vcredist_2015_Update3_x86.exe"; Parameters: "/install /quiet /norestart"; StatusMsg: "Install Microsoft Visual C++ Runtime..."; Tasks: VisualCpp; Flags: waituntilterminated
+Filename: "{tmp}\dotNetFx40_Full_setup.exe"; Parameters: "/q /norestart"; StatusMsg: "Install Microsoft .NET Framework online..."; Tasks: Framework; Flags: waituntilterminated
+
+Filename: "{app}\{#MyAppExeName}"; Description: "{cm:LaunchProgram,{#StringChange(MyAppName, '&', '&&')}}"; Flags: nowait postinstall skipifsilent
+
