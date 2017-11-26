@@ -29,8 +29,7 @@ Compression=lzma2/ultra64
 InternalCompressLevel=ultra64 
 WizardImageFile=image.bmp
 WizardSmallImageFile=small_image.bmp
-VersionInfoCopyright=ï¿½ {#MyAppYear} Columbiaï¿½ State
-VersionInfoCopyright=ï¿½ {#MyAppYear} Columbiaï¿½ State
+VersionInfoCopyright=© {#MyAppYear} Columbia™ State
 VersionInfoDescription={#MyAppName} Install
 VersionInfoVersion={#MyAppVersion}
 UninstallFilesDir={localappdata}\Columbia Team\Columbia State
@@ -41,10 +40,11 @@ Name: "serbianlatin"; MessagesFile: "compiler:Languages\SerbianLatin.isl"
 
 [Tasks]
 Name: "desktopicon";  Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: checkablealone
-Name: "DirectX";      Description: "Instaliraj Microsoft DirectX (Online)"; GroupDescription: "Sofver za podrï¿½ku"; Flags: checkablealone
-Name: "VisualCpp";    Description: "Instaliraj Microsoft Visual C++ Redistributable"; GroupDescription: "Sofver za podrï¿½ku"; Flags: checkablealone
-Name: "Framework";    Description: "Instaliraj Microsoft .NET Framework 4.0 (Online)"; GroupDescription: "Sofver za podrï¿½ku"; Flags: checkablealone
+Name: "DirectX";      Description: "Instaliraj Microsoft DirectX (Online)"; GroupDescription: "Sofver za podršku"; Flags: checkablealone
+Name: "VisualCpp";    Description: "Instaliraj Microsoft Visual C++ Redistributable"; GroupDescription: "Sofver za podršku"; Flags: checkablealone
+Name: "Framework";    Description: "Instaliraj Microsoft .NET Framework 4.0 (Online)"; GroupDescription: "Sofver za podršku"; Flags: checkablealone
 ;Name: "MVCppRedist";  Description: " Microsoft Visual C++ Redist"; GroupDescription: "Support Software"; Flags: unchecked
+
 [Files]
 Source: "files\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
 Source: "include\*"; DestDir: "{tmp}"; Flags: ignoreversion dontcopy
@@ -73,7 +73,7 @@ Filename: "{app}\{#MyAppExeName}"; Description: "{cm:LaunchProgram,{#StringChang
 
 
 [Messages]
-serbianlatin.BeveledLabel= - ï¿½ {#MyAppYear} Columbiaï¿½ State
+serbianlatin.BeveledLabel= - © {#MyAppYear} Columbia™ State
 
 [UninstallDelete]
 Type: filesandordirs; Name: {app}
