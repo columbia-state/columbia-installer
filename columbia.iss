@@ -60,3 +60,41 @@ Filename: "{tmp}\dotNetFx40_Full_setup.exe"; Parameters: "/q /norestart"; Status
 
 Filename: "{app}\{#MyAppExeName}"; Description: "{cm:LaunchProgram,{#StringChange(MyAppName, '&', '&&')}}"; Flags: nowait postinstall skipifsilent
 
+[Code]
+procedure LoadSkin(lpszPath: PAnsiChar; lpszIniFileName: PAnsiChar); external 'LoadSkin@{tmp}\isskin.dll stdcall delayload';
+procedure UnloadSkin; external 'UnloadSkin@{tmp}\isskin.dll stdcall delayload';
+
+function InitializeSetup(): Boolean; 
+begin
+  ExtractTemporaryFile('dxwebsetup.exe');
+  ExtractTemporaryFile('vcredist_2005 _SP1_x86.exe');
+  ExtractTemporaryFile('vcredist_2005_x86.exe');
+  ExtractTemporaryFile('vcredist_2008_SP1_x86.exe');
+  ExtractTemporaryFile('vcredist_2008_x86.exe');
+  ExtractTemporaryFile('vcredist_2010_SP1_x86.exe');
+  ExtractTemporaryFile('vcredist_2010_x86.exe');
+  //ExtractTemporaryFile('vcredist_2012_Update4_x86.exe');
+  //ExtractTemporaryFile('vcredist_2013_x86.exe');
+  //ExtractTemporaryFile('vcredist_2015_Update3_x86.exe');
+  ExtractTemporaryFile('dotNetFx40_Full_setup.exe');
+  ExtractTemporaryFile('isskin.dll');
+	ExtractTemporaryFile('skin.cjstyles');
+  LoadSkin(ExpandConstant('{tmp}\skin.cjstyles'), '');
+  Result := True;
+end;
+
+procedure DeinitializeSetup(); 
+begin
+  UnloadSkin();
+end;
+
+procedure InitializeWizard();
+begin
+  WizardForm.PageNameLabel.Width:=230;
+  WizardForm.PageDescriptionLabel.Width:=250;
+
+  WizardForm.WizardSmallBitmapImage.Left:=310;
+  WizardForm.WizardSmallBitmapImage.Top:=0;
+  WizardForm.WizardSmallBitmapImage.Width:=180;
+  WizardForm.WizardSmallBitmapImage.Height:=58;
+end;
