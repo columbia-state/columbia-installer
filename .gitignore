@@ -7,6 +7,7 @@ output/
 original/
 registry/
 support_extra/
+update/
 *.ico
 *.bmp
 *.psd
